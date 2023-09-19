@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="timer">
+      <div class="controls">
+        <input id="duration" value="3" />
+        <div>
+          <button id="start"><i class="fas fa-play"></i></button>
+          <button id="pause"><i class="fas fa-pause"></i></button>
+        </div>
+      </div>
+      <!--the dasharray attribute: set & calculate in code by counting the circle perimeter, aka circumference:  
+      2 * PI * radius : 2 * Math.pi * 90 = 565 pixels (for example. Runtime values are calculated dynamically from html radius value)
+      565 / 2 = 282
+      divide the circumference by 2 for calculating the same value for both the dashed perimeter and non-dashed perimeter having the dash     
+      by dynamically modifying the stroke-dashoffset, the non-dashed part of the stroke will change..
+      calculate based on the circle radius       
+        stroke-dasharray="562"
+        stroke-dashoffset="0"
+    -->
+      <svg class="dial">
+        <circle
+          id="timerCircle"
+          fill="transparent"
+          stroke="green"
+          stroke-width="15"
+          r="190"
+          cx="0"
+          cy="200"
+          transform="rotate(-90 100 100)"
+        />
+      </svg>
+    </div>
+
+    <script src="timer.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
